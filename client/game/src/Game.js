@@ -93,6 +93,7 @@ const GridGame = () => {
       });
   
       // Update the grid data with the new positions of red grids
+      setMaxNum(temp)
       setGridData((prevGridData) => {
         const updatedGridData = {
           ...prevGridData,
@@ -190,15 +191,15 @@ const GridGame = () => {
     <div className="game-container">
       <h1>Grid Game</h1>
       <div className="controls">
-        <button onClick={startGame} disabled={isGameRunning}>
+        <button onClick={startGame} disabled={isGameRunning} className='btn '>
           Start
         </button>
-        <button onClick={stopGame} disabled={!isGameRunning}>
+        <button onClick={stopGame} disabled={!isGameRunning} className='btn '>
           Stop
         </button>
-        <label>
+        <label className='label-h'>
           Speed:
-          <select value={speed} onChange={(e) => setSpeed(Number(e.target.value))}>
+          <select value={speed} onChange={(e) => setSpeed(Number(e.target.value))} className='label-drop'>
             <option value={1}>1</option>
             <option value={2}>2</option>
             <option value={3}>3</option>
